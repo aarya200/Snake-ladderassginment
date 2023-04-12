@@ -12,7 +12,7 @@ namespace Snake_And_Ladder
             Console.WriteLine(" The Player rolls the die to get a number between 1 to 6");
             Random random = new Random();
 
-            while (Player_position <= 100)
+            while (Player_position < 100)
             {
                 int Die_num = random.Next(1, 7);
                 Console.WriteLine(" Number after rolling a die:");
@@ -40,6 +40,10 @@ namespace Snake_And_Ladder
                 {
                     Player_position = 0;
                     Console.WriteLine("Player is back to initial position = " + Player_position);
+                }
+                else if (Player_position > 100)
+                {
+                    Player_position = Player_position - Die_num;
                 }
             }
 
